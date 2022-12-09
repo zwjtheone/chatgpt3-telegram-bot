@@ -11,6 +11,7 @@ WORKDIR /app
 
 COPY --from=builder /app/dist ./
 COPY --from=builder /app/package.json ./
+COPY --from=builder /app/.yarnrc.yml ./
 
 RUN corepack enable && corepack prepare yarn@stable --activate
 RUN yarn install
