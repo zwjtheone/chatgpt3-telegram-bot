@@ -9,7 +9,7 @@ dotenv.config();
 console.log("TELEGRAM_BOT_TOKEN", process.env.TELEGRAM_BOT_TOKEN)
 // @ts-ignore
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN, {
-    handlerTimeout: 10 * 1000
+    handlerTimeout: 60 * 1000
 });
 // When a user starts a conversation with the bot
 bot.start(async (ctx) => {
