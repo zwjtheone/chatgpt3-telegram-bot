@@ -65,7 +65,7 @@ bot.on('text', async (ctx) => {
                 } catch (e) {
                     await ctx.reply(
                         // @ts-ignore
-                        '❌Something went wrong. Details: ' + e.message
+                        '❌Something went wrong. Details: ' + e
                     );
                 }
             }

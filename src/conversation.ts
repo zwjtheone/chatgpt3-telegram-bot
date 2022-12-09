@@ -20,22 +20,23 @@ export const send = async (context: CreateCompletionRequestPrompt | null) => {
             model: "text-davinci-003",
             prompt: context,
             stream: false,
-            temperature: 1,
+            // temperature: 1,
             max_tokens: 4e3,
-            logprobs: null,
+            // logprobs: null,
             // echo: true,
             // top_p: 1,
-            n: 1,
-            presence_penalty: 1,
-            frequency_penalty: 1,
-            best_of: 1,
+            // n: 1,
+            // presence_penalty: 1,
+            // frequency_penalty: 1,
+            // best_of: 1,
             // stop: 4
         });
         console.log(completion.data)
         return completion.data.choices[0].text
     } catch (e) {
         console.log(e)
-        return "超时了，请重试"
+        // @ts-ignore
+        throw new Error(`openai接口调用失败: ${e?.response?.status}:${e?.response?.statusText}`)
     }
 };
 
