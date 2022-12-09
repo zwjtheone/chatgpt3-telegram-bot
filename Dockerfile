@@ -5,15 +5,4 @@ COPY . .
 RUN corepack enable && corepack prepare yarn@stable --activate
 RUN yarn install && yarn run build
 
-FROM node:16-alpine as runner
-
-WORKDIR /app
-
-COPY --from=builder /app/dist ./
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/.yarnrc.yml ./
-
-RUN corepack enable && corepack prepare yarn@stable --activate
-RUN yarn install
-
 ENTRYPOINT yarn run start

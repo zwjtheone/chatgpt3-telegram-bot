@@ -4,9 +4,10 @@
   "description": "",
   "scripts": {
     "dev": "nodemon ./src/main.ts",
-    "build" : "tsc",
+    "build": "tsc",
     "start": "node ./dist/main.js",
-    "run": "npm run build && npm run start"
+    "run": "npm run build && npm run start",
+    "docker_build": "docker build -f Dockerfile -t xxx/chatgpt3-telegram-bot ."
   },
   "repository": {
     "type": "git",

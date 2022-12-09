@@ -49,3 +49,4 @@ package-lock.json
 .yarn/install-state.gz
 logs
 dist
+.env
